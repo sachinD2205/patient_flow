@@ -1,0 +1,25 @@
+.Paper {
+  width: 100%;
+  /* background-color: red; */
+}
+
+.HeaderConsultations {
+  padding: 2vh;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.cardsConsultations {
+  margin: 1vh 2vw 1vh 2vw;
+}
+
+.headerTitle {
+  font-weight: bolder;
+  font-size: 1.1em;
+}
+
+.HeaderCard {
+  height: 100vh;
+  overflow: auto;
+}

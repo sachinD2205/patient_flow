@@ -1,0 +1,20 @@
+.HomePageMainDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: space-evenly; */
+  background-color: lightyellow;
+  padding: 15vh 0vw 0vh 0vw;
+  /* z-index: 133; */
+}
+
+.content1 {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+}
+
+.content2 {
+  width: 35%;
+}
