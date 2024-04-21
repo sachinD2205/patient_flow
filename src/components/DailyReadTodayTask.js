@@ -3,28 +3,56 @@ import {
   Card,
   CardActions,
   CardContent,
+  Paper,
   Typography,
 } from "@mui/material";
 import React from "react";
 import styles from "../styles/DailyReadTodayTask.module.css";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import medico from "../assets/images/healthcare.jpg";
 
 const DailyReadTodayTask = () => {
   return (
     <div>
-      <Card variant="outlined" className={styles.cardsConsultations}>
-        <CardContent>
-          <Typography
-            className={styles.headerTitle}
-            gutterBottom
-            // onClick={() => viewClinicRecord(data)}
-          >
-            dsf
-          </Typography>
-          <Typography variant="body2">sdf</Typography>
-          <Typography variant="body2">dsfd</Typography>
-        </CardContent>
-      </Card>
+      <Paper square elevation={5} className={styles.Paper}>
+        <div className={styles.PaperDiv}>
+          <div>
+            <div className={styles.DailyRead}> Daily Read</div>
+            <image
+              src="../assets/images/healthcare.jpg"
+              style={{ width: "200px", height: "200px" }}
+            />
+            <div>
+              Incididunt reprehenderit laboris deserunt veniam Lorem cupidatat
+              eiusmod aliqua amet proident esse anim sint. Magna sunt laborum
+              labore non amet. Enim voluptate excepteur ut officia. Culpa anim
+              magna ad velit eu aute do. Eu reprehenderit deserunt consequat
+              irure ea adipisicing exercitation aute nulla duis ut amet laborum
+              magna. Nisi occaecat et officia sint aliqua ex amet exercitation
+              ipsum cillum qui veniam. Sunt ipsum deserunt esse laborum
+              exercitation anim nisi ex aute qui ex nisi.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className={styles.DailyRead}> Daily Read</div>
+          <image
+            src="../assets/images/healthcare.jpg"
+            style={{ width: "200px", height: "200px" }}
+          />
+          <div>
+            Incididunt reprehenderit laboris deserunt veniam Lorem cupidatat
+            eiusmod aliqua amet proident esse anim sint. Magna sunt laborum
+            labore non amet. Enim voluptate excepteur ut officia. Culpa anim
+            magna ad velit eu aute do. Eu reprehenderit deserunt consequat irure
+            ea adipisicing exercitation aute nulla duis ut amet laborum magna.
+            Nisi occaecat et officia sint aliqua ex amet exercitation ipsum
+            cillum qui veniam. Sunt ipsum deserunt esse laborum exercitation
+            anim nisi ex aute qui ex nisi.
+          </div>
+        </div>
+      </Paper>
     </div>
   );
 };
