@@ -1,3 +1,12 @@
-const NavBarItemList = ["Home", "Consultations", "Profiles"];
+const NavBarItemList = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Profile",
+    path: "/profile",
+  },
+];
 
 export default NavBarItemList;

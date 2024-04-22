@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import styles from "../styles/UpcomingConsultation.module.css";
+import { Link, unstable_HistoryRouter } from "react-router-dom";
 
 const UpcomingConsultations = () => {
   const [consultationsList, setConsultationList] = useState([]);
@@ -62,7 +63,7 @@ const UpcomingConsultations = () => {
                     gutterBottom
                     onClick={() => viewClinicRecord(data)}
                   >
-                    {data?.name}
+                    <Link to="/profile">{data?.name}</Link>
                   </Typography>
                   <Typography variant="body2">
                     {data?.gender} | {data?.age}
@@ -72,13 +73,15 @@ const UpcomingConsultations = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button
-                    variant="contained"
-                    endIcon={<VisibilityIcon />}
-                    onClick={() => viewClinicRecord(data)}
-                  >
-                    View Clinical Record
-                  </Button>
+                  <Link to="/profile">
+                    <Button
+                      variant="contained"
+                      endIcon={<VisibilityIcon />}
+                      // onClick={() => viewClinicRecord(data)}
+                    >
+                      View Clinical Record
+                    </Button>
+                  </Link>
                 </CardActions>
               </Card>
             </>

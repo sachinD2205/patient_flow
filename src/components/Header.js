@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import EscalatorWarningRoundedIcon from "@mui/icons-material/EscalatorWarningRounded";
 import NavBarItemList from "../../src/assets/NavBarItemList";
+import { Link } from "react-router-dom";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -46,9 +47,11 @@ function Header() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <EscalatorWarningRoundedIcon
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-          />
+          <Link to={"/"}>
+            <EscalatorWarningRoundedIcon
+              sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+            />
+          </Link>
           <Typography
             variant="h6"
             noWrap
@@ -64,7 +67,7 @@ function Header() {
               textDecoration: "none",
             }}
           >
-            Patient Flow
+            <Link to={"/"}>Patient Flow</Link>
           </Typography>
 
           {/** for responsive */}
@@ -99,7 +102,7 @@ function Header() {
             >
               {NavBarItemList?.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">{page?.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -134,13 +137,15 @@ function Header() {
             }}
           >
             {NavBarItemList?.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "black", display: "block" }}
-              >
-                {page}
-              </Button>
+              <Link to={page?.path} key={page?.name}>
+                <Button
+                  key={page?.name}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "black", display: "block" }}
+                >
+                  {page?.name}
+                </Button>
+              </Link>
             ))}
           </Box>
 

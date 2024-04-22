@@ -3,6 +3,7 @@ import ErrorPage from "./components/ErrorPage";
 import Layout from "./components/Layout ";
 import HomePage from "./components/HomePage";
 import About from "./components/About";
+import Profiles from "./components/Profiles";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "profile",
+        element: <Profiles />,
         errorElement: <ErrorPage />,
       },
       {
