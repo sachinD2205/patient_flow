@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import styles from "../styles/UpcomingConsultation.module.css";
-import { Link, unstable_HistoryRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const UpcomingConsultations = () => {
   const [consultationsList, setConsultationList] = useState([]);
