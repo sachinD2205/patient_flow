@@ -9,10 +9,12 @@
   background-color: yellow;
   width: 20%;
   border-right: 1px solid black;
-  height: auto;
+  height: 100vh;
+  position: fixed;
 }
 
 .Content {
-  /* background-color: pink; */
+  background-color: pink;
   width: 80%;
+  padding-left: 20%;
 }
