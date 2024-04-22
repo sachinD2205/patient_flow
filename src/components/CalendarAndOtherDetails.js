@@ -6,13 +6,21 @@ import { Paper } from "@mui/material";
 
 const CalendarAndOtherDetails = () => {
   return (
-    <div className={styles.mainDiv}>
-      <div>
-        <CalendarForAppointmentView />
+    <div>
+      {/**   <Paper square elevation={5} className={styles.Paper}>
+       */}
+      <div className={styles.mainDiv}>
+        <div>
+          <CalendarForAppointmentView />
+        </div>
+
+        <div>
+          <PatientDetailsHome />
+        </div>
       </div>
-      <div>
-        <PatientDetailsHome />
-      </div>
+      {/**
+      </Paper>
+       */}
     </div>
   );
 };

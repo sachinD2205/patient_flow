@@ -1,8 +1,15 @@
 .MainDiv {
   display: flex;
   justify-content: center;
+  padding: 2vh 2vw 2vh 2vw;
 }
 
 .Paper {
+  padding: 5vh 2vw 2vh 2vw;
+  margin: 0vh 2vw 2vh 2vw;
+}
+
+.PaperDiv {
   padding: 2vh 2vw 2vh 2vw;
+  /* background-color: red; */
 }
