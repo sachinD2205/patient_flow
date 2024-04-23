@@ -1,7 +1,7 @@
 import React from "react";
 
 const ConsultationNotes = () => {
-  return <div>ConsultationNotes</div>;
+  return <div>Consultation Notes</div>;
 };
 
 export default ConsultationNotes;

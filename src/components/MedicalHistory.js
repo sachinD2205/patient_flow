@@ -1,7 +1,7 @@
 import React from "react";
 
 const MedicalHistory = () => {
-  return <div>MedicalHistory</div>;
+  return <div>Medical History</div>;
 };
 
 export default MedicalHistory;

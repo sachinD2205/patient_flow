@@ -1,7 +1,7 @@
 import React from "react";
 
 const WearableStats = () => {
-  return <div>WearableStats</div>;
+  return <div>Wearable Stats</div>;
 };
 
 export default WearableStats;
