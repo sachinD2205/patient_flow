@@ -5,7 +5,7 @@ const NavBarItemList = [
   },
   {
     name: "Profile",
-    path: "/profile",
+    path: "/",
   },
 ];
 

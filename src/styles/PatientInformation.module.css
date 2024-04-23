@@ -66,3 +66,17 @@
   display: flex;
   justify-content: center;
 }
+
+.DailogPaper {
+  padding: 5vh 2vw 5vh 2vw;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonSpace {
+  margin: 0vh 1vw 0vh 1vw;
+}

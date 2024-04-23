@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@emotion/react";
-import React, { useEffect } from "react";
-import { Controller, useForm } from "react-hook-form";
+import React, { useEffect, useState } from "react";
+import { Controller, FormProvider, useForm } from "react-hook-form";
 import theme from "../components/theme";
 import {
   Button,
@@ -16,6 +16,7 @@ import moment from "moment";
 import AdapterMoment from "@mui/x-date-pickers/AdapterMoment";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import { Link } from "react-router-dom";
+import PatientInformationDialog from "./PatientInformationDialog";
 
 // PatientInformationPatientInformationPatientInformation
 const PatientInformation = () => {
@@ -38,11 +39,17 @@ const PatientInformation = () => {
     formState: { errors },
   } = methods;
 
+  const [dialogState, setDialogState] = useState(false);
+
   const handleNext = (data) => {
     console.log("FormSubData", data);
   };
 
-  // initial set Form data
+  const editButton = () => {
+    setValue("disabledFieldInputState", false);
+    setDialogState(true);
+  };
+
   useEffect(() => {
     const clickedPatientDetails = JSON.parse(
       localStorage.getItem("clickedPatientDetails")
@@ -61,187 +68,188 @@ const PatientInformation = () => {
     <div>
       <ThemeProvider theme={theme}>
         <Paper square elevation={5} className={styles.Paper}>
-          <form onSubmit={methods.handleSubmit(handleNext)}>
-            <div className={styles.DivOuter}>
-              <div className={styles.TitleHeader}>Patient Information</div>
-            </div>
-            <div className={styles.EditButton}>
-              <Button type="button" size="small">
-                Edit Information &nbsp; &nbsp; <ModeEditIcon />
-              </Button>
-            </div>
-            <Grid container className={styles.GridContainer}>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={4}
-                className={styles.GridItemCenter}
-              >
-                <TextField
-                  id="standard-basic"
-                  disabled={watch("disabledFieldInputState")}
-                  label="Name"
-                  {...register("name")}
-                  error={!!errors?.name}
-                  helperText={errors?.name ? errors?.name?.message : null}
-                />
-              </Grid>
+          <FormProvider {...methods}>
+            <form onSubmit={methods.handleSubmit(handleNext)}>
+              <div className={styles.DivOuter}>
+                <div className={styles.TitleHeader}>Patient Information</div>
+              </div>
+              <div className={styles.EditButton}>
+                <Button type="button" size="small" onClick={() => editButton()}>
+                  Edit Information &nbsp; &nbsp; <ModeEditIcon />
+                </Button>
+              </div>
+              <Grid container className={styles.GridContainer}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={styles.GridItemCenter}
+                >
+                  <TextField
+                    id="standard-basic"
+                    disabled={watch("disabledFieldInputState")}
+                    label="Name"
+                    {...register("name")}
+                    error={!!errors?.name}
+                    helperText={errors?.name ? errors?.name?.message : null}
+                  />
+                </Grid>
 
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={4}
-                className={styles.GridItemCenter}
-              >
-                <TextField
-                  id="standard-basic"
-                  disabled={watch("disabledFieldInputState")}
-                  label="Gender"
-                  {...register("gender")}
-                  error={!!errors?.gender}
-                  helperText={errors?.gender ? errors?.gender?.message : null}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={4}
-                className={styles.GridItemCenter}
-              >
-                <TextField
-                  id="standard-basic"
-                  disabled={watch("disabledFieldInputState")}
-                  label="Age"
-                  {...register("age")}
-                  error={!!errors?.age}
-                  helperText={errors?.age ? errors?.age?.message : null}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={4}
-                className={styles.GridItemCenter}
-              >
-                <TextField
-                  id="standard-basic"
-                  disabled={watch("disabledFieldInputState")}
-                  label="Email Id"
-                  {...register("email")}
-                  error={!!errors?.email}
-                  helperText={errors?.email ? errors?.email?.message : null}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={4}
-                className={styles.GridItemCenter}
-              >
-                <TextField
-                  id="standard-basic"
-                  disabled={watch("disabledFieldInputState")}
-                  label="Phone Number"
-                  {...register("phone")}
-                  error={!!errors?.phone}
-                  helperText={errors?.phone ? errors?.phone?.message : null}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={4}
-                className={styles.GridItemCenter}
-              >
-                <TextField
-                  id="standard-basic"
-                  disabled={watch("disabledFieldInputState")}
-                  label="Polict Holder Name"
-                  {...register("policy_holder")}
-                  error={!!errors?.policy_holder}
-                  helperText={
-                    errors?.policy_holder
-                      ? errors?.policy_holder?.message
-                      : null
-                  }
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={4}
-                className={styles.GridItemCenter}
-              >
-                <TextField
-                  id="standard-basic"
-                  disabled={watch("disabledFieldInputState")}
-                  label="Height"
-                  {...register("height")}
-                  error={!!errors?.height}
-                  helperText={errors?.height ? errors?.height?.message : null}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={4}
-                className={styles.GridItemCenter}
-              >
-                <TextField
-                  id="standard-basic"
-                  disabled={watch("disabledFieldInputState")}
-                  label="Weight"
-                  {...register("weight")}
-                  error={!!errors?.weight}
-                  helperText={errors?.weight ? errors?.weight?.message : null}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={4}
-                lg={4}
-                xl={4}
-                className={styles.GridItemCenter}
-              >
-                <TextField
-                  id="standard-basic"
-                  disabled={watch("disabledFieldInputState")}
-                  label="Blood Group"
-                  {...register("blood_group")}
-                  error={!!errors?.blood_group}
-                  helperText={
-                    errors?.blood_group ? errors?.blood_group?.message : null
-                  }
-                />
-              </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={styles.GridItemCenter}
+                >
+                  <TextField
+                    id="standard-basic"
+                    disabled={watch("disabledFieldInputState")}
+                    label="Gender"
+                    {...register("gender")}
+                    error={!!errors?.gender}
+                    helperText={errors?.gender ? errors?.gender?.message : null}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={styles.GridItemCenter}
+                >
+                  <TextField
+                    id="standard-basic"
+                    disabled={watch("disabledFieldInputState")}
+                    label="Age"
+                    {...register("age")}
+                    error={!!errors?.age}
+                    helperText={errors?.age ? errors?.age?.message : null}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={styles.GridItemCenter}
+                >
+                  <TextField
+                    id="standard-basic"
+                    disabled={watch("disabledFieldInputState")}
+                    label="Email Id"
+                    {...register("email")}
+                    error={!!errors?.email}
+                    helperText={errors?.email ? errors?.email?.message : null}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={styles.GridItemCenter}
+                >
+                  <TextField
+                    id="standard-basic"
+                    disabled={watch("disabledFieldInputState")}
+                    label="Phone Number"
+                    {...register("phone")}
+                    error={!!errors?.phone}
+                    helperText={errors?.phone ? errors?.phone?.message : null}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={styles.GridItemCenter}
+                >
+                  <TextField
+                    id="standard-basic"
+                    disabled={watch("disabledFieldInputState")}
+                    label="Polict Holder Name"
+                    {...register("policy_holder")}
+                    error={!!errors?.policy_holder}
+                    helperText={
+                      errors?.policy_holder
+                        ? errors?.policy_holder?.message
+                        : null
+                    }
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={styles.GridItemCenter}
+                >
+                  <TextField
+                    id="standard-basic"
+                    disabled={watch("disabledFieldInputState")}
+                    label="Height"
+                    {...register("height")}
+                    error={!!errors?.height}
+                    helperText={errors?.height ? errors?.height?.message : null}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={styles.GridItemCenter}
+                >
+                  <TextField
+                    id="standard-basic"
+                    disabled={watch("disabledFieldInputState")}
+                    label="Weight"
+                    {...register("weight")}
+                    error={!!errors?.weight}
+                    helperText={errors?.weight ? errors?.weight?.message : null}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  lg={4}
+                  xl={4}
+                  className={styles.GridItemCenter}
+                >
+                  <TextField
+                    id="standard-basic"
+                    disabled={watch("disabledFieldInputState")}
+                    label="Blood Group"
+                    {...register("blood_group")}
+                    error={!!errors?.blood_group}
+                    helperText={
+                      errors?.blood_group ? errors?.blood_group?.message : null
+                    }
+                  />
+                </Grid>
 
-              {/**
+                {/**
               <Grid
                 item
                 xs={12}
@@ -303,16 +311,21 @@ const PatientInformation = () => {
                 </FormControl>
               </Grid>
                */}
-            </Grid>
+              </Grid>
 
-            <Link to="/">
-              <div className={styles.ExitButton}>
-                <Button type="button" size="small" color="error">
-                  Exit
-                </Button>
-              </div>
-            </Link>
-          </form>
+              <Link to="/">
+                <div className={styles.ExitButton}>
+                  <Button type="button" size="small" color="error">
+                    Exit
+                  </Button>
+                </div>
+              </Link>
+              <PatientInformationDialog
+                dialogState={dialogState}
+                setDialogState={setDialogState}
+              />
+            </form>
+          </FormProvider>
         </Paper>
       </ThemeProvider>
     </div>
