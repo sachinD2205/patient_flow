@@ -26,7 +26,7 @@ function Header() {
     setAnchorElNav(event.currentTarget);
   };
   const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
+    // setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
