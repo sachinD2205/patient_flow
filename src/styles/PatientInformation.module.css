@@ -78,5 +78,6 @@
 }
 
 .buttonSpace {
-  margin: 0vh 1vw 0vh 1vw;
+  background-color: yellow;
+  margin: 0vh 2vw 0vh 2vw;
 }

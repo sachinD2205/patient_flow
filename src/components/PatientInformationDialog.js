@@ -4,7 +4,6 @@ import { useFormContext } from "react-hook-form";
 import PatientDetails from "./PatientDetails";
 
 const PatientInformationDialog = ({ dialogState, setDialogState }) => {
-  const [dialogClose, setDialogClose] = useState(false);
   const {
     control,
     register,

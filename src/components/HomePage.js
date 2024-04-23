@@ -26,6 +26,7 @@ const HomePage = () => {
       });
   };
   useEffect(() => {
+    localStorage.removeItem("clickedPatientDetails");
     getConsultationsList();
   }, []);
   return (

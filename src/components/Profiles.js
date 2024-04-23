@@ -1,7 +1,7 @@
 import styles from "../styles/Profile.module.css";
 import DrawerContent from "./DrawerContent";
 import NewProfile from "./NewProfile";
-import PatientInformation from "./PatientInformation";
+// import PatientInformation from "./PatientInformation";
 
 const Profiles = () => {
   return (

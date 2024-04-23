@@ -284,7 +284,8 @@ const PatientDetails = ({ setDialogClose }) => {
           type="button"
           size="small"
           color="primary"
-          className={styles.buttonSpace}
+          style={{ margin: "0vh 1vw" }}
+          // className={styles.buttonSpace}
           onClick={() => updatePatientInformation()}
         >
           Update
@@ -293,7 +294,8 @@ const PatientDetails = ({ setDialogClose }) => {
           type="button"
           size="small"
           color="error"
-          className={styles.buttonSpace}
+          style={{ margin: "0vh 1vw" }}
+          // className={styles.buttonSpace}
           onClick={() => exitButton()}
         >
           Exit
