@@ -7,23 +7,23 @@ const DrawerContent = () => {
   const DrawerItems = [
     {
       name: "General Information",
-      path: "/",
+      path: "/profile/GeneralInformation",
     },
     {
       name: "Medical History",
-      path: "/",
+      path: "/profile/MedicalHistory",
     },
     {
       name: "Action Files",
-      path: "/",
+      path: "/profile/ActionPlans",
     },
     {
       name: "Files",
-      path: "/",
+      path: "/profile/Files",
     },
     {
       name: "WearableStats",
-      path: "/",
+      path: "/profile/WearableStats",
     },
   ];
 

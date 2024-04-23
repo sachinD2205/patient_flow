@@ -43,7 +43,7 @@ const PatientDetails = ({ setDialogClose }) => {
   };
 
   return (
-    <div className={styles.DailogPaper}>
+    <div className={styles.DialogPaper}>
       <div className={styles.DivOuter}>
         <div className={styles.TitleHeader}>Patient Information</div>
       </div>
