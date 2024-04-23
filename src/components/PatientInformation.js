@@ -15,7 +15,7 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import moment from "moment";
 import AdapterMoment from "@mui/x-date-pickers/AdapterMoment";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import PatientInformationDialog from "./PatientInformationDialog";
 
 // PatientInformationPatientInformationPatientInformation
@@ -328,6 +328,7 @@ const PatientInformation = () => {
           </FormProvider>
         </Paper>
       </ThemeProvider>
+      <Outlet />
     </div>
   );
 };

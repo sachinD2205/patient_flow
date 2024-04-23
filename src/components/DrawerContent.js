@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 const DrawerContent = () => {
   const DrawerItems = [
     {
+      name: "Patient Information",
+      path: "/profile",
+    },
+    {
       name: "General Information",
       path: "/profile/GeneralInformation",
     },
