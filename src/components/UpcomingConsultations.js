@@ -53,10 +53,11 @@ const UpcomingConsultations = ({ consultationsList }) => {
                   <Link to="/profile">
                     <Button
                       variant="contained"
+                      size="small"
                       endIcon={<VisibilityIcon />}
                       onClick={() => viewClinicRecord(data)}
                     >
-                      View Clinical Record
+                      Clinical Record
                     </Button>
                   </Link>
                 </CardActions>
