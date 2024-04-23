@@ -40,7 +40,16 @@ const PatientInformation = () => {
   };
 
   // initial set Form data
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const clickedPatientDetails = JSON.parse(
+      localStorage.getItem("clickedPatientDetails")
+    );
+    console.log("clickedPatientDetails", clickedPatientDetails);
+    reset(clickedPatientDetails);
+    return () => {
+      localStorage.removeItem("clickedPatientDetails");
+    };
+  }, []);
 
   // return
   return (

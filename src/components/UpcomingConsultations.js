@@ -34,6 +34,7 @@ const UpcomingConsultations = () => {
   };
 
   const viewClinicRecord = (data) => {
+    localStorage.setItem("clickedPatientDetails", JSON.stringify(data));
     console.log("Data", data);
   };
 
@@ -77,7 +78,7 @@ const UpcomingConsultations = () => {
                     <Button
                       variant="contained"
                       endIcon={<VisibilityIcon />}
-                      // onClick={() => viewClinicRecord(data)}
+                      onClick={() => viewClinicRecord(data)}
                     >
                       View Clinical Record
                     </Button>
