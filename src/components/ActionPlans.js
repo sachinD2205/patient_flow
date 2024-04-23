@@ -1,7 +1,7 @@
 import React from "react";
 
 const ActionPlans = () => {
-  return <div>ActionPlans</div>;
+  return <div>Action Plans</div>;
 };
 
 export default ActionPlans;
