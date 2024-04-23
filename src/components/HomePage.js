@@ -22,7 +22,7 @@ const HomePage = () => {
       })
       .catch((error) => {
         console.log("getConsultationsList_Api_Error", error);
-        alert("error_occurred");
+        alert("error_occurred - patientsList API");
       });
   };
   useEffect(() => {

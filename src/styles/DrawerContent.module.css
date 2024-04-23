@@ -1,0 +1,32 @@
+.HeaderDrawerContent {
+  font-weight: bolder;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.DrawerHeader {
+  padding: 5vh 1vw 5vh 1vw;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.DrawerItemsOuterHeader {
+  padding: 2vh 0vw 2vh 0vw;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-around; */
+}
+
+.DrawerItemsInnerHeader {
+  padding: 0.5vh 0vw 0.5vh 0.5vw;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1em;
+  color: cornflowerblue;
+}
+
+.DrawerItemsInnerHeader:hover {
+  color: darkblue;
+  background-color: lightgray;
+  cursor: pointer;
+}
