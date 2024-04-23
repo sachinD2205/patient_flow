@@ -56,3 +56,13 @@
     padding-left: 0;
   }
 }
+
+.EditButton {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ExitButton {
+  display: flex;
+  justify-content: center;
+}

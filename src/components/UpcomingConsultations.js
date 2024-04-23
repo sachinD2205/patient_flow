@@ -12,35 +12,11 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import styles from "../styles/UpcomingConsultation.module.css";
 import { Link } from "react-router-dom";
 
-const UpcomingConsultations = () => {
-  const [consultationsList, setConsultationList] = useState([]);
-
-  const getConsultationsList = () => {
-    const url = `https://assessment.banoskolar.com/api/patientsList`;
-
-    axios
-      .get(url)
-      .then((res) => {
-        console.log("response", res?.data?.patients);
-        const patientsList = res?.data?.patients;
-        if (patientsList?.length > 0) {
-          setConsultationList(patientsList);
-        }
-      })
-      .catch((error) => {
-        console.log("getConsultationsList_Api_Error", error);
-        alert("error_occurred");
-      });
-  };
-
+const UpcomingConsultations = ({ consultationsList }) => {
   const viewClinicRecord = (data) => {
     localStorage.setItem("clickedPatientDetails", JSON.stringify(data));
     console.log("Data", data);
   };
-
-  useEffect(() => {
-    getConsultationsList();
-  }, []);
 
   // view
   return (

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import theme from "../components/theme";
 import {
+  Button,
   FormControl,
   FormHelperText,
   Grid,
@@ -13,6 +14,8 @@ import styles from "../styles/PatientInformation.module.css";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import moment from "moment";
 import AdapterMoment from "@mui/x-date-pickers/AdapterMoment";
+import ModeEditIcon from "@mui/icons-material/ModeEdit";
+import { Link } from "react-router-dom";
 
 // PatientInformationPatientInformationPatientInformation
 const PatientInformation = () => {
@@ -45,7 +48,9 @@ const PatientInformation = () => {
       localStorage.getItem("clickedPatientDetails")
     );
     console.log("clickedPatientDetails", clickedPatientDetails);
+
     reset(clickedPatientDetails);
+    setValue("disabledFieldInputState", true);
     return () => {
       localStorage.removeItem("clickedPatientDetails");
     };
@@ -59,6 +64,11 @@ const PatientInformation = () => {
           <form onSubmit={methods.handleSubmit(handleNext)}>
             <div className={styles.DivOuter}>
               <div className={styles.TitleHeader}>Patient Information</div>
+            </div>
+            <div className={styles.EditButton}>
+              <Button type="button" size="small">
+                Edit Information &nbsp; &nbsp; <ModeEditIcon />
+              </Button>
             </div>
             <Grid container className={styles.GridContainer}>
               <Grid
@@ -93,9 +103,9 @@ const PatientInformation = () => {
                   id="standard-basic"
                   disabled={watch("disabledFieldInputState")}
                   label="Gender"
-                  {...register("Malekm")}
-                  error={!!errors?.Malekm}
-                  helperText={errors?.Malekm ? errors?.Malekm?.message : null}
+                  {...register("gender")}
+                  error={!!errors?.gender}
+                  helperText={errors?.gender ? errors?.gender?.message : null}
                 />
               </Grid>
               <Grid
@@ -294,6 +304,14 @@ const PatientInformation = () => {
               </Grid>
                */}
             </Grid>
+
+            <Link to="/">
+              <div className={styles.ExitButton}>
+                <Button type="button" size="small" color="error">
+                  Exit
+                </Button>
+              </div>
+            </Link>
           </form>
         </Paper>
       </ThemeProvider>

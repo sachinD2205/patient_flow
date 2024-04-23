@@ -3,7 +3,7 @@ import CalendarForAppointmentView from "./CalendarForAppointmentView";
 import PatientDetailsHome from "./PatientDetailsHome";
 import styles from "../styles/CalendarAndOtherDetails.module.css";
 
-const CalendarAndOtherDetails = () => {
+const CalendarAndOtherDetails = ({ consultationsList }) => {
   return (
     <div>
       {/**   <Paper square elevation={5} className={styles.Paper}>
@@ -14,7 +14,7 @@ const CalendarAndOtherDetails = () => {
         </div>
 
         <div>
-          <PatientDetailsHome />
+          <PatientDetailsHome consultationsList={consultationsList} />
         </div>
       </div>
       {/**
