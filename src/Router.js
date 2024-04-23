@@ -10,6 +10,7 @@ import ConsultationNotes from "./components/ConsultationNotes";
 import ActionPlans from "./components/ActionPlans";
 import Files from "./components/Files";
 import WearableStats from "./components/WearableStats";
+import PatientInformation from "./components/PatientInformation";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: "PatientInformation",
-            element: <HomePage />,
+            element: <PatientInformation />,
             errorElement: <ErrorPage />,
           },
           {

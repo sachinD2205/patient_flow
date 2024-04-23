@@ -1,5 +1,6 @@
 import styles from "../styles/Profile.module.css";
 import DrawerContent from "./DrawerContent";
+import NewProfile from "./NewProfile";
 import PatientInformation from "./PatientInformation";
 
 const Profiles = () => {
@@ -9,7 +10,10 @@ const Profiles = () => {
         <DrawerContent />
       </div>
       <div className={styles.Content}>
+        <NewProfile />
+        {/**
         <PatientInformation />
+         */}
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ const DrawerContent = () => {
   const DrawerItems = [
     {
       name: "Patient Information",
-      path: "/profile",
+      path: "/profile/PatientInformation",
     },
     {
       name: "General Information",
