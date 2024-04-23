@@ -27,7 +27,7 @@ const PatientDetailsHome = ({ consultationsList }) => {
           <div style={{ padding: "2vh" }}>
             <div style={{ display: "flex" }}>
               <h3>Next Patients Details </h3>
-              <Link to={"/profile"}>
+              <Link to={"/profile/PatientInformation"}>
                 <div style={{ padding: "3vh 2vw 2vh 5vw" }}>
                   <IconButton
                     onClick={() => viewClinicRecord(currentPatientData)}

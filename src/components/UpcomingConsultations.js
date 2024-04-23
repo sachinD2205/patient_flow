@@ -40,7 +40,7 @@ const UpcomingConsultations = ({ consultationsList }) => {
                     gutterBottom
                     onClick={() => viewClinicRecord(data)}
                   >
-                    <Link to="/profile">{data?.name}</Link>
+                    <Link to="/profile/PatientInformation">{data?.name}</Link>
                   </Typography>
                   <Typography variant="body2">
                     {data?.gender} | {data?.age}
@@ -50,7 +50,7 @@ const UpcomingConsultations = ({ consultationsList }) => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Link to="/profile">
+                  <Link to="/profile/PatientInformation">
                     <Button
                       variant="contained"
                       size="small"
